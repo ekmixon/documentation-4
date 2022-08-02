@@ -6,7 +6,7 @@ import subprocess
 web_server_host = "cdn1.tn.ixsystems.com"
 web_server_dir = "/zdata/docs"
 
-rsync_target = username + "@" + web_server_host + ":" + web_server_dir
+rsync_target = f"{username}@{web_server_host}:{web_server_dir}"
 
 rsync_command = ['rsync', '-avz', '--delete', 'public/', rsync_target]
 hugo_command = ['hugo', '-t', 'docsy', '-d', 'public', '--gc', '--minify', '--cleanDestinationDir']
